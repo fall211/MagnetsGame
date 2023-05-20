@@ -1,2 +1,0 @@
-# MagnetsGame
- beep boop amongus
