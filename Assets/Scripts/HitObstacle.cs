@@ -28,11 +28,17 @@ public class HitObstacle : MonoBehaviour
     {
         lastVelocity = rb.velocity;
         if (rotationProgress < 1 && rotationProgress >= 0){
-            rotationProgress += Time.deltaTime * 1;
+            rotationProgress += Time.deltaTime * (float)0.1;
 
             // Here we assign the interpolated rotation to transform.rotation
             // It will range from startRotation (rotationProgress == 0) to endRotation (rotationProgress >= 1)
             transform.rotation = Quaternion.Lerp(startRotation, endRotation, rotationProgress);
+        }
+        if (rotationProgress >=1)
+        {
+            ChangeSprite();
+            Vector3 newRotation = new Vector3(0, 0, 180);
+            transform.eulerAngles = newRotation;
         }
     }
 
@@ -53,9 +59,6 @@ public class HitObstacle : MonoBehaviour
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
             StartRotating(-180);
-            newRotation = new Vector3(0, 0, 180);
-            transform.eulerAngles = newRotation;
-            ChangeSprite();
         }
 
     }
