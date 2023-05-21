@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // public float charge = 1f; 
     public Vector3 velosity; // initial velosity with direction specified by the user
     public Vector3 force; // current total force on the ball
-    const float STEP = 0.001f; // STEP, should be const, 0.001 would fast but not that accurate
+    const float STEP = 0.001f; // the amount forward per frame; should be const, 0.001 would fast but not that accurate, the numerical error
 
     void totalForce(){
         force = new Vector3(0,0,0);
