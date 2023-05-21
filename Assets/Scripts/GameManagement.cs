@@ -11,7 +11,6 @@ public class GameManagement : MonoBehaviour
     private velocityIndicatorPlacer indicatorPlacer;
 
     private Vector3 initialPlayerPos;
-    private Vector3 initialPlayerVelocity;
 
     public bool isGameRunning = false;
 
@@ -29,6 +28,8 @@ public class GameManagement : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity = indicatorPlacer.velocity;
         indicatorPlacer.indicator.SetActive(false);
 
+        initialPlayerPos = player.transform.position;
+
         // disable the button
         startButton.SetActive(false);
     }
@@ -38,6 +39,8 @@ public class GameManagement : MonoBehaviour
         // reset the game
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         Destroy(player);
+
+        objectPlacer.GetComponent<ItemPlacer>().resetPlayer(initialPlayerPos);
 
         indicatorPlacer.indicator.SetActive(true);
 

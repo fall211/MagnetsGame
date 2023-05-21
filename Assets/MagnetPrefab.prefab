@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charge: 35
-  effRadius: 10
+  effRadius: 5
   subForce: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  circleRenderer: {fileID: 0}
