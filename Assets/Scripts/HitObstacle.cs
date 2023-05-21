@@ -12,6 +12,9 @@ public class HitObstacle : MonoBehaviour
     public Sprite[] spriteArray;
     public SpriteRenderer spriteRenderer;
 
+    private bool hasWon = false;
+    private float timeSinceWin = 0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -40,6 +43,25 @@ public class HitObstacle : MonoBehaviour
             Vector3 newRotation = new Vector3(0, 0, 180);
             transform.eulerAngles = newRotation;
         }
+        if (hasWon)
+        {
+            // move player to the center of the screen
+            Vector3 center = new Vector3(0, 0, 0);
+            transform.position = Vector3.MoveTowards(transform.position, center, 0.05f);
+            // make the player bigger
+            transform.localScale += new Vector3(0.01f, 0.01f, 0);
+            transform.Rotate(0, 0, 0.1f);
+            SimpleSceneManager.Instance.loadingRotation = transform.rotation.eulerAngles;
+            SimpleSceneManager.Instance.loadingPosition = transform.position;
+            SimpleSceneManager.Instance.loadingScale = transform.localScale;
+            
+            timeSinceWin += Time.deltaTime;
+            if (timeSinceWin >= SimpleSceneManager.Instance.transitionTime)
+            {
+                SimpleSceneManager.Instance.LoadNextScene();
+            }
+
+        }
     }
 
     void ChangeSprite(int index)
@@ -64,6 +86,11 @@ public class HitObstacle : MonoBehaviour
             rb.velocity = 0*lastVelocity;
             Destroy(obj.gameObject);
             ChangeSprite(2);
+            hasWon = true;
+            
+
+            
+
         }
 
     }

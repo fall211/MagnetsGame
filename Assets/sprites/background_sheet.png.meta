@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_corner
+      name: background_center
       rect:
         serializedVersion: 2
         x: 0
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: background_center
+      name: background_corner
       rect:
         serializedVersion: 2
         x: 32
@@ -178,8 +178,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      background_center: 226734628
-      background_corner: 768203497
+      background_center: 768203497
+      background_corner: 226734628
       background_edge: -751219902
   spritePackingTag: 
   pSDRemoveMatte: 0
