@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    public float charge = 1f; // It is actually charge not magnet! This is the intensity of the "magnet". Set to 1 by default for simplicity. 
+    public float charge = 30f; // It is actually charge not magnet! This is the intensity of the "magnet". 1 is too small, adjust this
     // public Vector3 pos = transform.position; // actually 2D, position of the magnet
     public float effRadius = 10.0f; // effective raduis
 
@@ -14,15 +14,23 @@ public class Magnet : MonoBehaviour
     public Vector3 subForce; // maybe make it static
 
     public GameObject player; // binding to player in start
+    // public GameObject effCircle;
+    public LineRenderer circleRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
 
-        // Vector3 pos = transform.position;
-        // ballPos = player.transform.position;
-        // distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
+        circleRenderer = gameObject.AddComponent<LineRenderer>();
+        circleRenderer.material = new Material(Shader.Find("Diffuse"));
+        circleRenderer.startWidth = 0.1f;
+        circleRenderer.endWidth = 0.1f;
+        Color color = Color.black;
+        circleRenderer.startColor = color;
+        circleRenderer.endColor = color;
+
+        DrawCircle(effRadius);
     }
 
     // Update is called once per frame
@@ -41,8 +49,9 @@ public class Magnet : MonoBehaviour
         Vector3 dist = pos - ballPos;
         // Debug.Log(dist);
 
+        // NOTE: set every z = 0, otherwise, it does not work
+
         distBall = Mathf.Sqrt(Vector3.Dot(dist, dist));
-        // Debug.Log(distBall);
         // Debug.Log(distBall);
         // Debug.Log(effRadius);
         // Debug.Log(distBall <= effRadius);
@@ -55,6 +64,19 @@ public class Magnet : MonoBehaviour
             subForce = new Vector3(subForceNorm * Mathf.Cos(theta), subForceNorm * Mathf.Sin(theta), 0f);
         } else {
             subForce = new Vector3(0f,0f,0f);
+        }
+    }
+
+    void DrawCircle(float radius) {
+        int steps = 1000;
+        circleRenderer.positionCount = steps;
+        for (int i = 0; i <= steps+2; i++)
+        {
+            float theta = 2 * Mathf.PI * i / ((float) steps);
+            float x = transform.position.x + radius * Mathf.Cos(theta);
+            float y = transform.position.y + radius * Mathf.Sin(theta);
+            Vector3 currentPosition = new Vector3(x, y, 0);
+            circleRenderer.SetPosition(i, currentPosition);
         }
     }
 
