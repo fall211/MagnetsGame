@@ -8,6 +8,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField] private GameObject objectPlacer;
     [SerializeField] private GameObject startButton;
 
+    private Vector3 initialPlayerPos;
+    private Vector3 initialPlayerVelocity;
+
     public bool isGameRunning = false;
 
 

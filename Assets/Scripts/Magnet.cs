@@ -28,9 +28,8 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
         if (player == null) {
-            player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
-        } else {
             return;
         }
 
