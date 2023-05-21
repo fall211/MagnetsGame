@@ -8,11 +8,17 @@ public class GameManagement : MonoBehaviour
     [SerializeField] private GameObject objectPlacer;
     [SerializeField] private GameObject startButton;
 
+    private velocityIndicatorPlacer indicatorPlacer;
+
     private Vector3 initialPlayerPos;
     private Vector3 initialPlayerVelocity;
 
     public bool isGameRunning = false;
 
+    void Start()
+    {
+        indicatorPlacer = objectPlacer.GetComponent<velocityIndicatorPlacer>();
+    }
 
     public void startGame(){
         isGameRunning = true;
@@ -20,8 +26,8 @@ public class GameManagement : MonoBehaviour
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         player.GetComponent<ConstrainPlayer>().enabled = false;
         player.GetComponent<Player>().enabled = true;
-        player.GetComponent<Rigidbody2D>().velocity = objectPlacer.GetComponent<velocityIndicatorPlacer>().velocity;
-        objectPlacer.GetComponent<velocityIndicatorPlacer>().deleteIndicator();
+        player.GetComponent<Rigidbody2D>().velocity = indicatorPlacer.velocity;
+        indicatorPlacer.indicator.SetActive(false);
 
         // disable the button
         startButton.SetActive(false);
@@ -32,7 +38,8 @@ public class GameManagement : MonoBehaviour
         // reset the game
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         Destroy(player);
-        objectPlacer.GetComponent<ItemPlacer>().resetLevel();
+
+        indicatorPlacer.indicator.SetActive(true);
 
         // enable the button
         startButton.SetActive(true);

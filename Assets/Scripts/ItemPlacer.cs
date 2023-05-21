@@ -59,8 +59,6 @@ public class ItemPlacer : MonoBehaviour
                 magnets.Add(magnet.gameObject);
             }
         }
-    
-
     }
 
 
@@ -86,15 +84,5 @@ public class ItemPlacer : MonoBehaviour
         magnetText.text = "Magnets:" + magnetCount + "/" + maxMagnetCount;
     }
 
-    public void resetLevel()
-    {
-        magnetCount = 0;
-        UpdateText(magnetCount, maxMagnetCount);
-        foreach (GameObject obj in magnets)
-        {
-            Destroy(obj);
-        }
-        magnets.Clear();
-        }
 
 }
