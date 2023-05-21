@@ -45,6 +45,7 @@ public class HitObstacle : MonoBehaviour
         }
         if (hasWon)
         {
+            transform.GetComponent<CircleCollider2D>().enabled = false;
             // move player to the center of the screen
             Vector3 center = new Vector3(0, 0, 0);
             transform.position = Vector3.MoveTowards(transform.position, center, 0.05f);

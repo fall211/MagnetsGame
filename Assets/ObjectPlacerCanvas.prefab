@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4898998047008407026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35,10 +35,10 @@ RectTransform:
   m_Father: {fileID: 4898998047833848348}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 56.25, y: -7.5}
+  m_SizeDelta: {x: 30, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4898998047008407023
 CanvasRenderer:
@@ -172,8 +172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 198.96, y: 49.74}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: 75, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4898998047833848347
 MonoBehaviour:
@@ -190,7 +190,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 2857201792250168898, guid: 90e0bae0b36e349019e4006a45210e1c, type: 3}
   magnetPrefab: {fileID: 5295590290007960891, guid: 8d9e8b6348a7847bfbe2ce4fee71c0ca, type: 3}
   playerConstraint: {fileID: 0}
-  maxMagnetCount: 2
+  magnets: []
+  maxMagnetCount: 0
   magnetText: {fileID: 4898998048471553622}
   indicatorPlacer: {fileID: 4898998047833848345}
 --- !u!114 &4898998047833848345
@@ -206,6 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicatorPrefab: {fileID: 8097609596767372755, guid: 83464a5d359ea41478351fe031f394c0, type: 3}
+  indicator: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &4898998047833848346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +273,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 60, y: 30}
+  m_SizeDelta: {x: 30, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4898998048229029850
 CanvasRenderer:
@@ -459,8 +462,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -574,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 2
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -695,8 +698,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

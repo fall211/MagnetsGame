@@ -130,30 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 149.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -24.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898998047008407027, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898998047833848347, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
-      propertyPath: maxMagnetCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4898998047833848347, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
       propertyPath: playerConstraint
       value: 
@@ -662,7 +638,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 17.783623, y: 10.143314}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -678,7 +654,7 @@ Transform:
   m_GameObject: {fileID: 1955358684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0463, y: -0.0247, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 17.783623, y: 10.143314, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
