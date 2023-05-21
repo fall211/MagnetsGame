@@ -22,9 +22,18 @@ public class velocityIndicatorPlacer : MonoBehaviour
             Vector3 direction = mousePos - player.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             indicator.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+
+            // limit the indicator's length
+            if (direction.magnitude > 5){
+                direction = direction.normalized * 5;
+            }
+
             indicator.transform.localScale = new Vector3(1, direction.magnitude, 1);
             // move the indicator so the base is at the player
-            indicator.transform.position = mousePos - (direction / 2);
+            // limit the indicator from going too far
+            Vector3 indicatorPos = direction.normalized * (direction.magnitude / 2);
+
+            indicator.transform.position = player.transform.position + indicatorPos;
             if (Input.GetMouseButtonDown(0))
             {
                 isPlacingIndicator = false;
