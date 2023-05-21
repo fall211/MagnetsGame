@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioTracks:
+  - {fileID: 8300000, guid: 4b0429af9910c48bf88da85bd75252c6, type: 3}
   - {fileID: 8300000, guid: ee74d5da6d608470c9255f6c529a69e2, type: 3}
   _playTracks: 1
   _nextTrack: 0
