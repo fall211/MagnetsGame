@@ -6,7 +6,7 @@ public class Magnet : MonoBehaviour
 {
     public float charge = 30f; // It is actually charge not magnet! This is the intensity of the "magnet". 1 is too small, adjust this
     // public Vector3 pos = transform.position; // actually 2D, position of the magnet
-    public float effRadius = 10.0f; // effective raduis
+    public float effRadius = 5.0f; // effective raduis
 
     // private Vector3 ballPos = player.transform.position;
     private Vector3 ballPos; // the position of ball import here
