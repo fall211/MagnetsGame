@@ -81,6 +81,9 @@ public class HitObstacle : MonoBehaviour
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
             StartRotating(-180);
+
+            GameObject MusicPlayer = GameObject.FindGameObjectsWithTag("Music Player")[0];
+            MusicPlayer.GetComponent<Music_Player>().NextTrack();
         } else if (obj.gameObject.CompareTag("Finish"))
         {
             rb.velocity = 0*lastVelocity;
