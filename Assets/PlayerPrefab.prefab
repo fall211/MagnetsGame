@@ -148,6 +148,7 @@ MonoBehaviour:
   spriteArray:
   - {fileID: 21300000, guid: b679e8f07acf8354893647a861950cfa, type: 3}
   - {fileID: 21300000, guid: 660536b375c3b0542b34f33b4b46dd3d, type: 3}
+  - {fileID: 21300000, guid: c24e7c671269191479592704f781dc41, type: 3}
   spriteRenderer: {fileID: 1848275529738661357}
 --- !u!50 &-1657874404840936764
 Rigidbody2D:
@@ -168,7 +169,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &6472127392075996833
 MonoBehaviour:

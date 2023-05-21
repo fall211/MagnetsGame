@@ -28,7 +28,7 @@ public class HitObstacle : MonoBehaviour
     {
         lastVelocity = rb.velocity;
         if (rotationProgress < 1 && rotationProgress >= 0){
-            rotationProgress += Time.deltaTime * (float)0.1;
+            rotationProgress += Time.deltaTime * (float)1;
 
             // Here we assign the interpolated rotation to transform.rotation
             // It will range from startRotation (rotationProgress == 0) to endRotation (rotationProgress >= 1)
@@ -36,15 +36,15 @@ public class HitObstacle : MonoBehaviour
         }
         if (rotationProgress >=1)
         {
-            ChangeSprite();
+            ChangeSprite(1);
             Vector3 newRotation = new Vector3(0, 0, 180);
             transform.eulerAngles = newRotation;
         }
     }
 
-    void ChangeSprite()
+    void ChangeSprite(int index)
     {
-        spriteRenderer.sprite = spriteArray[1];
+        spriteRenderer.sprite = spriteArray[index];
     }
 
     private void OnCollisionEnter2D(Collision2D obj) 
@@ -59,6 +59,11 @@ public class HitObstacle : MonoBehaviour
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
             StartRotating(-180);
+        } else if (obj.gameObject.CompareTag("Finish"))
+        {
+            rb.velocity = 0*lastVelocity;
+            Destroy(obj.gameObject);
+            ChangeSprite(2);
         }
 
     }
