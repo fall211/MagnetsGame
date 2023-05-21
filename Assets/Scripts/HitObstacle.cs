@@ -24,6 +24,9 @@ public class HitObstacle : MonoBehaviour
             var speed = lastVelocity.magnitude;
             var dir = Vector2.Reflect(lastVelocity.normalized, obj.contacts[0].normal);
             rb.velocity = dir * Mathf.Max(speed, 0f);
+        } else if (obj.gameObject.CompareTag("Spike"))
+        {
+            Destroy(rb.gameObject);
         }
 
     }
