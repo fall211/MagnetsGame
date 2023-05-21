@@ -20,7 +20,7 @@ public class Magnet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
+        // player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
     }
 
     // Update is called once per frame
