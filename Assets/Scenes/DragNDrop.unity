@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724491107}
   - component: {fileID: 724491108}
+  - component: {fileID: 724491110}
   - component: {fileID: 724491109}
   m_Layer: 5
   m_Name: ObjectPlacer
@@ -314,6 +315,7 @@ MonoBehaviour:
   playerConstraint: {fileID: 1779982833}
   maxMagnetCount: 2
   magnetText: {fileID: 1965274921}
+  indicatorPlacer: {fileID: 724491110}
 --- !u!114 &724491109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +342,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &724491110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724491106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bed38ffddfb74d3c809fb5d40475f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorPrefab: {fileID: 8097609596767372755, guid: 83464a5d359ea41478351fe031f394c0, type: 3}
 --- !u!1 &753006143
 GameObject:
   m_ObjectHideFlags: 0
