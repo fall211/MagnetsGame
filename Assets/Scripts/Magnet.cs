@@ -16,6 +16,7 @@ public class Magnet : MonoBehaviour
     public GameObject player; // binding to player in start
     // public GameObject effCircle;
     public LineRenderer circleRenderer = null;
+    [SerializeField] private Material lineMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Magnet : MonoBehaviour
         // only add linerender once
         if (circleRenderer == null) {
             circleRenderer = gameObject.AddComponent<LineRenderer>();
-            circleRenderer.material = new Material(Shader.Find("Diffuse"));
+            circleRenderer.material = lineMaterial;
             circleRenderer.startWidth = 0.1f;
             circleRenderer.endWidth = 0.1f;
             Color color = Color.black;
