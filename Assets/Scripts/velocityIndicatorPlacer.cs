@@ -8,7 +8,7 @@ public class velocityIndicatorPlacer : MonoBehaviour
 
     private Vector3 mousePos;
     private bool isPlacingIndicator = false;
-    private GameObject indicator;
+    public GameObject indicator;
     private GameObject player;
     public Vector3 velocity;
 
