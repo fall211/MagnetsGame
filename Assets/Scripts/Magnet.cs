@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    public double charge = 1f; // It is actually charge not magnet! This is the intensity of the "magnet". Set to 1 by default for simplicity. 
+    public float charge = 1f; // It is actually charge not magnet! This is the intensity of the "magnet". Set to 1 by default for simplicity. 
     // public Vector3 pos = transform.position; // actually 2D, position of the magnet
-    public double effRadius = 1f; // effective raduis
+    public float effRadius = 1f; // effective raduis
 
     // private Vector3 ballPos = player.transform.position;
     private Vector3 ballPos; // the position of ball import here
-    private double distBall;
-    public double subForce;
+    private float distBall; // distance from magnet to ball
+    public Vector3 subForce; // maybe make it static
 
-    public GameObject player;
+    public GameObject player; // binding to player in start
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 pos = transform.position;
-        ballPos = player.transform.position;
-        distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
+        player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
+
+        // Vector3 pos = transform.position;
+        // ballPos = player.transform.position;
+        // distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
     }
 
     // Update is called once per frame
@@ -28,13 +30,18 @@ public class Magnet : MonoBehaviour
     {
         Vector3 pos = transform.position;
         ballPos = player.transform.position; // update ball position
-        distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
+        Vector3 dist = pos - ballPos;
+
+        distBall = Mathf.Sqrt(Vector3.Dot(dist, dist));
 
         // assign foce considering effective raduis
         if (distBall <= effRadius) {
-            subForce = charge/(distBall*distBall);
+            float subForceNorm = charge/(distBall*distBall);
+            float theta = Mathf.Atan2(dist.y, dist.x);
+
+            subForce = new Vector3(subForceNorm * Mathf.Cos(theta), subForceNorm * Mathf.Sin(theta), 0f);
         } else {
-            subForce = 0;
+            subForce = new Vector3(0f,0f,0f);
         }
     }
 
