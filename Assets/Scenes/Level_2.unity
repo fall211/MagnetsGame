@@ -801,6 +801,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898998047008407026, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898998047008407027, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898998047833848347, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: maxMagnetCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4898998047833848347, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
       propertyPath: playerConstraint
       value: 
