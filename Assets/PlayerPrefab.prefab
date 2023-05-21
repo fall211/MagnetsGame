@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 970547119}
   - component: {fileID: 5770477693070942162}
   - component: {fileID: -1657874404840936764}
+  - component: {fileID: 6472127392075996833}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -113,7 +114,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -169,3 +170,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &6472127392075996833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857201792250168898}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b09ed19b3f9b42309c4ba94f98e0763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velosity: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
