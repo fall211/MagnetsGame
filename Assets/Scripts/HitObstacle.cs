@@ -45,6 +45,7 @@ public class HitObstacle : MonoBehaviour
         }
         if (hasWon)
         {
+            transform.GetComponent<Player>().enabled = false;
             transform.GetComponent<CircleCollider2D>().enabled = false;
             // move player to the center of the screen
             Vector3 center = new Vector3(0, 0, 0);
@@ -57,7 +58,7 @@ public class HitObstacle : MonoBehaviour
             SimpleSceneManager.Instance.loadingScale = transform.localScale;
             
             timeSinceWin += Time.deltaTime;
-            if (timeSinceWin >= SimpleSceneManager.Instance.transitionTime)
+            if (timeSinceWin >= 5f)
             {
                 SimpleSceneManager.Instance.LoadNextScene();
             }

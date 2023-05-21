@@ -7,6 +7,7 @@ TagManager:
   - Spike
   - Magnet
   - Obstacle
+  - Music Player
   layers:
   - Default
   - TransparentFX
@@ -44,9 +45,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: bg
+  - name: Background
     uniqueID: 4284674783
     locked: 0
-  - name: stuff
+  - name: Obstacles
     uniqueID: 2197637819
+    locked: 0
+  - name: Magnets
+    uniqueID: 2751261339
+    locked: 0
+  - name: Win
+    uniqueID: 1780199567
+    locked: 0
+  - name: Player
+    uniqueID: 1354418271
+    locked: 0
+  - name: Transition
+    uniqueID: 1365218437
     locked: 0

@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1176238962}
+    - target: {fileID: 4898998048883064678, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1780199567
+      objectReference: {fileID: 0}
     - target: {fileID: 4898998048883064681, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
       propertyPath: m_Name
       value: ObjectPlacerCanvas
@@ -522,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1176238962}
+    - target: {fileID: 420125973585569118, guid: c98411fd331e2403886e83081f0159d7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1780199567
+      objectReference: {fileID: 0}
     - target: {fileID: 420125973585741206, guid: c98411fd331e2403886e83081f0159d7, type: 3}
       propertyPath: objectPlacer
       value: 
@@ -688,8 +696,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -10292513
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 768203497, guid: 5617489b697866144a061b3686c58d5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -767,6 +775,14 @@ PrefabInstance:
     - target: {fileID: 6688463508966871324, guid: 1b5f0be0165cf472fa94268c9ba49039, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688463508966871325, guid: 1b5f0be0165cf472fa94268c9ba49039, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688463508966871325, guid: 1b5f0be0165cf472fa94268c9ba49039, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1780199567
       objectReference: {fileID: 0}
     - target: {fileID: 6688463508966871330, guid: 1b5f0be0165cf472fa94268c9ba49039, type: 3}
       propertyPath: m_IsTrigger

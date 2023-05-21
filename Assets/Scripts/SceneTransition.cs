@@ -23,7 +23,7 @@ public class SceneTransition : MonoBehaviour
 
         transform.localScale -= new Vector3(0.01f, 0.01f, 0);
         timeSinceStart += Time.deltaTime;
-        if (timeSinceStart >= SimpleSceneManager.Instance.transitionTime)
+        if (timeSinceStart >= 5f)
         {
             Destroy(gameObject);
         }

@@ -10,7 +10,6 @@ public class SimpleSceneManager : MonoBehaviour
     public Vector3 loadingPosition = new Vector3(0, 0, 0);
     public Vector3 loadingScale = new Vector3(1, 1, 1);
 
-    public float transitionTime = 5f;
 
     private void Awake()
     {
