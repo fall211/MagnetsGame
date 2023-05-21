@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magnet : MonoBehaviour
 {
     public double charge = 1f; // It is actually charge not magnet! This is the intensity of the "magnet". Set to 1 by default for simplicity. 
-    public Vector3 pos; // actually 2D, position of the magnet
+    // public Vector3 pos = transform.position; // actually 2D, position of the magnet
     public double effRadius = 1f; // effective raduis
 
     // private Vector3 ballPos = player.transform.position;
@@ -13,9 +13,12 @@ public class Magnet : MonoBehaviour
     private double distBall;
     public double subForce;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 pos = transform.position;
         ballPos = player.transform.position;
         distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
     }
@@ -23,6 +26,7 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
         ballPos = player.transform.position; // update ball position
         distBall = Mathf.Sqrt(Vector3.Dot(pos, pos));
 
