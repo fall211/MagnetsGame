@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: maxMagnetCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4898998047833848347, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: playerConstraint
+      value: 
+      objectReference: {fileID: 638670758}
     - target: {fileID: 4898998048229029853, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -264,6 +268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+--- !u!61 &638670758 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5001174273834764419, guid: decef3dc784364e6c8f5da03890b1d52, type: 3}
+  m_PrefabInstance: {fileID: 1349173854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &969755585
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,14 +435,6 @@ PrefabInstance:
     - target: {fileID: 5001174273834764418, guid: decef3dc784364e6c8f5da03890b1d52, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001174273834764418, guid: decef3dc784364e6c8f5da03890b1d52, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001174273834764418, guid: decef3dc784364e6c8f5da03890b1d52, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5001174273834764418, guid: decef3dc784364e6c8f5da03890b1d52, type: 3}
       propertyPath: m_LocalPosition.x
