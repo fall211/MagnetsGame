@@ -52,6 +52,7 @@ public class ItemPlacer : MonoBehaviour
                 isPlacingMagnet = false;
                 magnetCount++;
                 UpdateText(magnetCount, maxMagnetCount);
+                magnet.GetComponent<MovePlacedObject>().canBeMoved = true;
             }
         }
     }

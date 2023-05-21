@@ -10,6 +10,7 @@ public class MovePlacedObject : MonoBehaviour
 {
     private bool isDragging;
     private Vector3 mouseOffset;
+    public bool canBeMoved = false;
 
     private void OnMouseDown()
     {
@@ -26,6 +27,8 @@ public class MovePlacedObject : MonoBehaviour
 
     private void Update()
     {
+        if (!canBeMoved) return;
+
         if (isDragging)
         {
             // adjust the sprite position with respect to the mouse's position and the original offset
