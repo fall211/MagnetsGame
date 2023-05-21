@@ -21,12 +21,23 @@ public class Magnet : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
-        DrawCircle(effRadius, Color.black);
+
+        circleRenderer = gameObject.AddComponent<LineRenderer>();
+        circleRenderer.material = new Material(Shader.Find("Diffuse"));
+        circleRenderer.startWidth = 0.1f;
+        circleRenderer.endWidth = 0.1f;
+        Color color = Color.black;
+        circleRenderer.startColor = color;
+        circleRenderer.endColor = color;
+
+        DrawCircle(effRadius);
     }
 
     // Update is called once per frame
     void Update()
     {
+        DrawCircle(effRadius);
+
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0) {
             return;
         }
@@ -58,15 +69,7 @@ public class Magnet : MonoBehaviour
         }
     }
 
-    void DrawCircle(float radius, Color color) {
-        circleRenderer = gameObject.AddComponent<LineRenderer>();
-        circleRenderer.material = new Material(Shader.Find("Diffuse"));
-        circleRenderer.startWidth = 0.1f;
-        circleRenderer.endWidth = 0.1f;
-        // Color color = Color.black;
-        circleRenderer.startColor = color;
-        circleRenderer.endColor = color;
-
+    void DrawCircle(float radius) {
         int steps = 50;
         circleRenderer.positionCount = steps+3;
         for (int i = 0; i <= steps+2; i++)
