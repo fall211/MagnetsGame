@@ -36,6 +36,8 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DrawCircle(effRadius);
+
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0) {
             return;
         }
@@ -69,7 +71,7 @@ public class Magnet : MonoBehaviour
     }
 
     void DrawCircle(float radius) {
-        int steps = 1000;
+        int steps = 50;
         circleRenderer.positionCount = steps+3;
         for (int i = 0; i <= steps+2; i++)
         {
