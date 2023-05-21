@@ -15,28 +15,29 @@ public class Magnet : MonoBehaviour
 
     public GameObject player; // binding to player in start
     // public GameObject effCircle;
-    public LineRenderer circleRenderer;
+    public LineRenderer circleRenderer = null;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
-
-        circleRenderer = gameObject.AddComponent<LineRenderer>();
-        circleRenderer.material = new Material(Shader.Find("Diffuse"));
-        circleRenderer.startWidth = 0.1f;
-        circleRenderer.endWidth = 0.1f;
-        Color color = Color.black;
-        circleRenderer.startColor = color;
-        circleRenderer.endColor = color;
-
-        // DrawCircle(effRadius);
     }
 
     // Update is called once per frame
     void Update()
     {
-        DrawCircle(effRadius);
+        // only add linerender once
+        if (circleRenderer == null) {
+            circleRenderer = gameObject.AddComponent<LineRenderer>();
+            circleRenderer.material = new Material(Shader.Find("Diffuse"));
+            circleRenderer.startWidth = 0.1f;
+            circleRenderer.endWidth = 0.1f;
+            Color color = Color.black;
+            circleRenderer.startColor = color;
+            circleRenderer.endColor = color;
+        }
+
+        // DrawCircle(effRadius);
 
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0) {
             return;
