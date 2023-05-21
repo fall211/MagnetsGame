@@ -40,6 +40,7 @@ public class ItemPlacer : MonoBehaviour
                 } else {
                     if (playerConstraint.bounds.Contains(mousePos)) {
                         isPlacingPlayer = false;
+                        player.GetComponent<ConstrainPlayer>().playerConstraint = playerConstraint;
                     }
                 }
             }
@@ -48,23 +49,11 @@ public class ItemPlacer : MonoBehaviour
             magnet.transform.position = mousePos;
             if (Input.GetMouseButtonDown(0))
             {
-                if (playerConstraint == null) {
-                    isPlacingMagnet = false;
-                    magnetCount++;
-                    UpdateText(magnetCount, maxMagnetCount);
-                } else {
-                    if (!playerConstraint.bounds.Contains(mousePos)) {
-                        isPlacingMagnet = false;
-                        magnetCount++;
-                        UpdateText(magnetCount, maxMagnetCount);
-                    }
-                }
-
+                isPlacingMagnet = false;
+                magnetCount++;
+                UpdateText(magnetCount, maxMagnetCount);
             }
         }
-
-
-
     }
 
     // place player prefab
