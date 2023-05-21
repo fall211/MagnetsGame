@@ -28,6 +28,12 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null) {
+            player = GameObject.FindGameObjectsWithTag("Player")[0]; // assume there is only one player
+        } else {
+            return;
+        }
+
         Vector3 pos = transform.position;
         ballPos = player.transform.position; // update ball position
         Vector3 dist = pos - ballPos;
