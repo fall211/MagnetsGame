@@ -79,6 +79,15 @@ public class ItemPlacer : MonoBehaviour
         isPlacingMagnet = true;
     }
 
+    public void resetPlayer(Vector3 pos){
+        player = Instantiate(playerPrefab, pos, Quaternion.identity);
+        indicatorPlacer.setPlayer(player);
+        if (playerConstraint != null) {
+            player.GetComponent<ConstrainPlayer>().playerConstraint = playerConstraint;
+        }
+        player.GetComponent<MovePlacedObject>().canBeMoved = true;
+    }
+
     private void UpdateText(int magnetCount, int maxMagnetCount)
     {
         magnetText.text = "Magnets:" + magnetCount + "/" + maxMagnetCount;

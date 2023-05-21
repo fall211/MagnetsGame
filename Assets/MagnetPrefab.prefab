@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af594c49cff224d13b09737311d47135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 35
-  effRadius: 10
+  charge: 350
+  effRadius: 4
   subForce: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  circleRenderer: {fileID: 0}

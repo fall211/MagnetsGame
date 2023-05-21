@@ -30,7 +30,7 @@ public class Magnet : MonoBehaviour
         circleRenderer.startColor = color;
         circleRenderer.endColor = color;
 
-        DrawCircle(effRadius);
+        // DrawCircle(effRadius);
     }
 
     // Update is called once per frame
@@ -65,6 +65,7 @@ public class Magnet : MonoBehaviour
         } else {
             subForce = new Vector3(0f,0f,0f);
         }
+        DrawCircle(effRadius);
     }
 
     void DrawCircle(float radius) {
