@@ -18,6 +18,7 @@ public class ItemPlacer : MonoBehaviour
     [SerializeField] private int maxMagnetCount;
     private int magnetCount = 0;
     [SerializeField] private TextMeshProUGUI magnetText;
+    public velocityIndicatorPlacer indicatorPlacer;
     
     void Start()
     {
@@ -43,6 +44,8 @@ public class ItemPlacer : MonoBehaviour
                         player.GetComponent<ConstrainPlayer>().playerConstraint = playerConstraint;
                     }
                 }
+                player.GetComponent<MovePlacedObject>().canBeMoved = true;
+                indicatorPlacer.placeIndicator();
             }
         } else if (isPlacingMagnet)
         {
@@ -55,13 +58,17 @@ public class ItemPlacer : MonoBehaviour
                 magnet.GetComponent<MovePlacedObject>().canBeMoved = true;
             }
         }
+    
+
     }
+
 
     // place player prefab
     public void PlacePlayer()
     {
         if (player != null) return;
         player = Instantiate(playerPrefab, mousePos, Quaternion.identity);
+        indicatorPlacer.setPlayer(player);
         isPlacingPlayer = true;
     }
 
