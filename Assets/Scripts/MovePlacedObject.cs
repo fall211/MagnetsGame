@@ -18,17 +18,19 @@ public class MovePlacedObject : MonoBehaviour
     private Vector3 mouseOffset;
     public bool canBeMoved = false;
     private velocityIndicatorPlacer indicatorPlacer;
+    private GameManagement gameManagement;
 
     [SerializeField] private ItemType itemType;
 
     void Start()
     {
         indicatorPlacer = GameObject.Find("ObjectPlacer").GetComponent<velocityIndicatorPlacer>();
+        gameManagement = GameObject.Find("GameManager").GetComponent<GameManagement>();
     }
 
     private void OnMouseDown()
     {
-        if (!canBeMoved) return;
+        if (!canBeMoved || gameManagement.isGameRunning) return;
 
 
         isDragging = true;
@@ -39,6 +41,8 @@ public class MovePlacedObject : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!canBeMoved || gameManagement.isGameRunning) return;
+
         isDragging = false;
 
         if (itemType == ItemType.Player){
@@ -48,7 +52,7 @@ public class MovePlacedObject : MonoBehaviour
 
     private void Update()
     {
-        if (!canBeMoved) return;
+        if (!canBeMoved || gameManagement.isGameRunning) return;
 
         if (isDragging)
         {

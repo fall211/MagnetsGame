@@ -11,6 +11,7 @@ public class ItemPlacer : MonoBehaviour
     private GameObject player;
     private GameObject magnet;
     [SerializeField] private BoxCollider2D playerConstraint;
+    [HideInInspector] public List<GameObject> magnets;
 
     private bool isPlacingPlayer = false;
     private bool isPlacingMagnet = false;
@@ -55,6 +56,7 @@ public class ItemPlacer : MonoBehaviour
                 magnetCount++;
                 UpdateText(magnetCount, maxMagnetCount);
                 magnet.GetComponent<MovePlacedObject>().canBeMoved = true;
+                magnets.Add(magnet.gameObject);
             }
         }
     
@@ -84,5 +86,15 @@ public class ItemPlacer : MonoBehaviour
         magnetText.text = "Magnets:" + magnetCount + "/" + maxMagnetCount;
     }
 
+    public void resetLevel()
+    {
+        magnetCount = 0;
+        UpdateText(magnetCount, maxMagnetCount);
+        foreach (GameObject obj in magnets)
+        {
+            Destroy(obj);
+        }
+        magnets.Clear();
+        }
 
 }

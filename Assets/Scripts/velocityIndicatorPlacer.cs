@@ -10,6 +10,7 @@ public class velocityIndicatorPlacer : MonoBehaviour
     private bool isPlacingIndicator = false;
     private GameObject indicator;
     private GameObject player;
+    public Vector3 velocity;
 
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class velocityIndicatorPlacer : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 isPlacingIndicator = false;
+                velocity = direction;
             }
         }
 
@@ -45,6 +47,10 @@ public class velocityIndicatorPlacer : MonoBehaviour
     public void placeIndicator(){
         indicator = Instantiate(indicatorPrefab, player.transform.position, Quaternion.identity);
         isPlacingIndicator = true;
+    }
+
+    public void deleteIndicator(){
+        Destroy(indicator);
     }
 
     public void setPlayer(GameObject player){
