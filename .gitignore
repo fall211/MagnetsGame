@@ -138,3 +138,8 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# Sprite folder meta files
+/[Aa]ssets/[Ss]prites.meta
+
+# Aseprite meta files
+/[Aa]ssets/[Ss]prites/*.ase.meta
