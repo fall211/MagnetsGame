@@ -5,8 +5,9 @@ using UnityEngine;
 public class magnetMovement : MonoBehaviour
 {
 
-    [SerializeField] Vector2 beginning;
-    [SerializeField] Vector2 end;
+    [SerializeField] Vector2 beginning = new Vector2 (0,0);
+    [SerializeField] Vector2 end = new Vector2 (0,0);
+    [SerializeField] float speed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class magnetMovement : MonoBehaviour
         // Uses formula to oscillate between the two points:
         // Look here for reference: https://math.stackexchange.com/questions/3438653/why-lambda-x-1-lambday-lvert-lambda-in-0-1-represents-th
 
-        float lambda = Mathf.Abs(Mathf.Sin(Time.realtimeSinceStartup));
+        float lambda = Mathf.Abs(Mathf.Sin(speed * Time.realtimeSinceStartup));
         transform.position =  (1 - lambda) * beginning + lambda * end;
     }
 }
