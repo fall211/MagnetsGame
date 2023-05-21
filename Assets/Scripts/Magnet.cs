@@ -6,7 +6,7 @@ public class Magnet : MonoBehaviour
 {
     public float charge = 1f; // It is actually charge not magnet! This is the intensity of the "magnet". Set to 1 by default for simplicity. 
     // public Vector3 pos = transform.position; // actually 2D, position of the magnet
-    public float effRadius = 1f; // effective raduis
+    public float effRadius = 10.0f; // effective raduis
 
     // private Vector3 ballPos = player.transform.position;
     private Vector3 ballPos; // the position of ball import here
@@ -31,8 +31,13 @@ public class Magnet : MonoBehaviour
         Vector3 pos = transform.position;
         ballPos = player.transform.position; // update ball position
         Vector3 dist = pos - ballPos;
+        // Debug.Log(dist);
 
         distBall = Mathf.Sqrt(Vector3.Dot(dist, dist));
+        // Debug.Log(distBall);
+        // Debug.Log(distBall);
+        // Debug.Log(effRadius);
+        // Debug.Log(distBall <= effRadius);
 
         // assign foce considering effective raduis
         if (distBall <= effRadius) {
