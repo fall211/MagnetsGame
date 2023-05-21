@@ -45,7 +45,6 @@ public class ItemPlacer : MonoBehaviour
                     }
                 }
                 player.GetComponent<MovePlacedObject>().canBeMoved = true;
-                indicatorPlacer.placeIndicator();
             }
         } else if (isPlacingMagnet)
         {
