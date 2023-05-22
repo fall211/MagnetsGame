@@ -14,7 +14,7 @@ enum ItemType {
 
 public class MovePlacedObject : MonoBehaviour
 {
-    private bool isDragging;
+    [HideInInspector] public bool isDragging;
     private Vector3 mouseOffset;
     public bool canBeMoved = false;
     private velocityIndicatorPlacer indicatorPlacer;

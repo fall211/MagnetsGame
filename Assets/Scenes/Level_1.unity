@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: playerConstraint
       value: 
       objectReference: {fileID: 638670758}
+    - target: {fileID: 4898998047833848348, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -275
+      objectReference: {fileID: 0}
     - target: {fileID: 4898998048229029853, guid: 63fe768352c704809adf3cd1123c618c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -499,7 +503,6 @@ MonoBehaviour:
   loadingRotation: {x: -0, y: 0, z: 0}
   loadingPosition: {x: 0, y: 0, z: 0}
   loadingScale: {x: 1, y: 1, z: 1}
-  transitionTime: 5
 --- !u!4 &1503068463
 Transform:
   m_ObjectHideFlags: 0
@@ -522,6 +525,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420125972571069994, guid: c98411fd331e2403886e83081f0159d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -25.249939
+      objectReference: {fileID: 0}
     - target: {fileID: 420125973585569118, guid: c98411fd331e2403886e83081f0159d7, type: 3}
       propertyPath: m_Camera
       value: 

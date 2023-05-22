@@ -19,9 +19,9 @@ public class SceneTransition : MonoBehaviour
     {
         
 
-        this.transform.Rotate(0, 0, -0.1f);
+        this.transform.Rotate(0, 0, -1f * Time.deltaTime * 60);
 
-        transform.localScale -= new Vector3(0.01f, 0.01f, 0);
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.deltaTime * 60f;
         timeSinceStart += Time.deltaTime;
         if (timeSinceStart >= 5f)
         {

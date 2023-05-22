@@ -51,8 +51,8 @@ public class HitObstacle : MonoBehaviour
             Vector3 center = new Vector3(0, 0, 0);
             transform.position = Vector3.MoveTowards(transform.position, center, 0.05f);
             // make the player bigger
-            transform.localScale += new Vector3(0.01f, 0.01f, 0);
-            transform.Rotate(0, 0, 0.1f);
+            transform.localScale += new Vector3(0.1f, 0.1f, 0) * Time.deltaTime * 60f;
+            transform.Rotate(0, 0, 1f * Time.deltaTime * 60f);
             SimpleSceneManager.Instance.loadingRotation = transform.rotation.eulerAngles;
             SimpleSceneManager.Instance.loadingPosition = transform.position;
             SimpleSceneManager.Instance.loadingScale = transform.localScale;
@@ -79,18 +79,22 @@ public class HitObstacle : MonoBehaviour
             rb.velocity = dir * Mathf.Max(speed, 0f);
         } else if (obj.gameObject.CompareTag("Spike"))
         {
+            Player playerComponent = transform.GetComponent<Player>();
+            playerComponent.enabled = false;
+
             rb.velocity = 0*rb.velocity;
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
             StartRotating(-180);
 
-            GameObject MusicPlayer = GameObject.FindGameObjectsWithTag("Music Player")[0];
-            MusicPlayer.GetComponent<Music_Player>().NextTrack();
+
         } else if (obj.gameObject.CompareTag("Finish"))
         {
             rb.velocity = 0*lastVelocity;
             Destroy(obj.gameObject);
             ChangeSprite(2);
+            // set angular velocity to 0
+            rb.angularVelocity = 0f;
             hasWon = true;
             
 

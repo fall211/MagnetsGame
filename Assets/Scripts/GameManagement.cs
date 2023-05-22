@@ -7,8 +7,12 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField] private GameObject objectPlacer;
     [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject resetButton;
+    [SerializeField] private MovePlacedObject movePlacedObject;
 
     private velocityIndicatorPlacer indicatorPlacer;
+    private ItemPlacer itemPlacer;
+
 
     private Vector3 initialPlayerPos;
 
@@ -17,6 +21,33 @@ public class GameManagement : MonoBehaviour
     void Start()
     {
         indicatorPlacer = objectPlacer.GetComponent<velocityIndicatorPlacer>();
+        itemPlacer = objectPlacer.GetComponent<ItemPlacer>();
+    }
+
+    void Update(){
+
+
+        foreach (var obj in GameObject.FindObjectsOfType<MovePlacedObject>()) {
+            if (obj.isDragging) {
+                startButton.SetActive(false);
+                resetButton.SetActive(false);
+                return;
+            }
+        }
+        if (itemPlacer.isPlacingMagnet || itemPlacer.isPlacingPlayer){
+            startButton.SetActive(false);
+            resetButton.SetActive(false);
+            return;
+        }
+
+        if (isGameRunning){
+            startButton.SetActive(false);
+            resetButton.SetActive(true);
+        } else {
+            startButton.SetActive(true);
+            resetButton.SetActive(false);
+        }
+        
     }
 
     public void startGame(){

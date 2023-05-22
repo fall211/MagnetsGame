@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2946f08fe61a4f9d810833c95fb1c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
   canBeMoved: 0
   itemType: 0
 --- !u!58 &-1704547604979980976
@@ -169,7 +170,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &6472127392075996833
 MonoBehaviour:

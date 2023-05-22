@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(AudioSource))]
 public class Music_Player : MonoBehaviour {
+	public static Music_Player Instance { get; private set; }
+
+
 	[Tooltip("_audioSource defines the Audio Source component in this scene.")]
 	AudioSource _audioSource;
 	[Tooltip("_audioTracks defines the audio clips to be played continuously through out the scene.")]
@@ -26,6 +30,16 @@ public class Music_Player : MonoBehaviour {
 	public bool _isMute = false;
 	
 	void Awake () {		
+
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		} else {
+			Destroy(gameObject);
+		}
+
+
 		_audioSource = GetComponent<AudioSource>();
 		_audioSource.clip = _audioTracks[0];
 		_playingTrack = 0;

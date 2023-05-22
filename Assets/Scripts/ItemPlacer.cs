@@ -13,8 +13,8 @@ public class ItemPlacer : MonoBehaviour
     [SerializeField] private BoxCollider2D playerConstraint;
     [HideInInspector] public List<GameObject> magnets;
 
-    private bool isPlacingPlayer = false;
-    private bool isPlacingMagnet = false;
+    [HideInInspector] public bool isPlacingPlayer = false;
+    [HideInInspector] public bool isPlacingMagnet = false;
 
     [SerializeField] private int maxMagnetCount;
     private int magnetCount = 0;
