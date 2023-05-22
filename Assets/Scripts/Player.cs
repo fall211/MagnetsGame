@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         totalForce();
 
@@ -36,5 +36,6 @@ public class Player : MonoBehaviour
         transform.position += deltaPosition * Time.deltaTime * 60f;
 
         velosity += force * STEP;
+
     }
 }

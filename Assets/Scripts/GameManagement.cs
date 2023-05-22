@@ -29,14 +29,12 @@ public class GameManagement : MonoBehaviour
 
         foreach (var obj in GameObject.FindObjectsOfType<MovePlacedObject>()) {
             if (obj.isDragging) {
-                startButton.SetActive(false);
-                resetButton.SetActive(false);
+                disableButtons();
                 return;
             }
         }
         if (itemPlacer.isPlacingMagnet || itemPlacer.isPlacingPlayer){
-            startButton.SetActive(false);
-            resetButton.SetActive(false);
+            disableButtons();
             return;
         }
 
@@ -77,6 +75,11 @@ public class GameManagement : MonoBehaviour
 
         // enable the button
         startButton.SetActive(true);
+    }
+
+    public void disableButtons(){
+        startButton.SetActive(false);
+        resetButton.SetActive(false);
     }
 
 }

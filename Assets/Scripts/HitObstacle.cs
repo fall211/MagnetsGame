@@ -12,6 +12,8 @@ public class HitObstacle : MonoBehaviour
     public Sprite[] spriteArray;
     public SpriteRenderer spriteRenderer;
 
+    private GameManagement gameManager;
+
     private bool hasWon = false;
     private float timeSinceWin = 0f;
 
@@ -24,12 +26,17 @@ public class HitObstacle : MonoBehaviour
     void Start()
     {
         spriteRenderer.sprite = spriteArray[0];
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManagement>();
     }
 
     // Update is called once per frame
     void Update()
     {
         lastVelocity = rb.velocity;
+        // if (rb.velocity.magnitude > 5f){
+        //     rb.velocity = rb.velocity.normalized * 5f;
+        // }
+
         if (rotationProgress < 1 && rotationProgress >= 0){
             rotationProgress += Time.deltaTime * (float)1;
 
@@ -45,6 +52,8 @@ public class HitObstacle : MonoBehaviour
         }
         if (hasWon)
         {
+            // disable buttons
+            gameManager.disableButtons();
             transform.GetComponent<Player>().enabled = false;
             transform.GetComponent<CircleCollider2D>().enabled = false;
             // move player to the center of the screen
