@@ -24,7 +24,7 @@ public class MovePlacedObject : MonoBehaviour
 
     void Start()
     {
-        indicatorPlacer = GameObject.Find("ObjectPlacer").GetComponent<velocityIndicatorPlacer>();
+        indicatorPlacer = GameObject.Find("GameManager").GetComponent<velocityIndicatorPlacer>();
         gameManagement = GameObject.Find("GameManager").GetComponent<GameManagement>();
     }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManagement : MonoBehaviour
 {
 
-    [SerializeField] private GameObject objectPlacer;
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject resetButton;
     [SerializeField] private MovePlacedObject movePlacedObject;
@@ -20,8 +19,8 @@ public class GameManagement : MonoBehaviour
 
     void Start()
     {
-        indicatorPlacer = objectPlacer.GetComponent<velocityIndicatorPlacer>();
-        itemPlacer = objectPlacer.GetComponent<ItemPlacer>();
+        indicatorPlacer = GetComponent<velocityIndicatorPlacer>();
+        itemPlacer = GetComponent<ItemPlacer>();
     }
 
     void Update(){
@@ -34,6 +33,10 @@ public class GameManagement : MonoBehaviour
             }
         }
         if (itemPlacer.isPlacingMagnet || itemPlacer.isPlacingPlayer){
+            disableButtons();
+            return;
+        }
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 0){
             disableButtons();
             return;
         }
@@ -69,7 +72,7 @@ public class GameManagement : MonoBehaviour
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         Destroy(player);
 
-        objectPlacer.GetComponent<ItemPlacer>().resetPlayer(initialPlayerPos);
+        itemPlacer.resetPlayer(initialPlayerPos);
 
         indicatorPlacer.indicator.SetActive(true);
 

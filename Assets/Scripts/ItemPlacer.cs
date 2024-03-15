@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class ItemPlacer : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
@@ -19,11 +20,15 @@ public class ItemPlacer : MonoBehaviour
     [SerializeField] private int maxMagnetCount;
     private int magnetCount = 0;
     [SerializeField] private TextMeshProUGUI magnetText;
+    [SerializeField] private GameObject magnetParent;
     public velocityIndicatorPlacer indicatorPlacer;
     
     void Start()
     {
         UpdateText(magnetCount, maxMagnetCount);
+        if (maxMagnetCount == 0) {
+            magnetParent.SetActive(false);
+        }
     }
 
     void Update()
